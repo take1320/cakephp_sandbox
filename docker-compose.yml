@@ -22,13 +22,15 @@ services:
       - mysql
     volumes:
       - .:/var/www/html
-      #- /var/www/html/vendor
+      - /var/www/html/vendor
   nginx:
     build:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
     depends_on:
       - phpfpm
+    volumes:
+      - .:/var/www/html
     ports:
       - 8080:80
 volumes:
