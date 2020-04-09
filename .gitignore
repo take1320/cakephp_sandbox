@@ -36,7 +36,8 @@ Thumbs.db
 # NetBeans
 nbproject/*
 # Visual Studio Code
-.vscode
+.vscode/*
+!.vscode/extensions.json
 # Sass preprocessor
 .sass-cache/
 
