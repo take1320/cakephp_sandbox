@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:7.2-fpm-alpine
 
 # app source
 WORKDIR /var/www/html
@@ -15,8 +15,8 @@ COPY --from=composer:1.9.1 /usr/bin/composer /usr/bin/composer
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-#RUN set -xeu \
-#  && composer install \
+RUN set -xeu \
+ && composer install \
 
 # コンテナ起動時にmigrate
 #CMD php artisan migrate && php-fpm

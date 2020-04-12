@@ -1,0 +1,24 @@
+<?php
+/*
+ * This document has been generated with
+ * https://mlocati.github.io/php-cs-fixer-configurator/#version:2.16.1|configurator
+ * you can change this configuration by importing this file.
+ */
+return PhpCsFixer\Config::create()
+    ->setRules([
+        'align_multiline_comment' => true,
+        'array_indentation' => true,
+        'array_syntax' => ['syntax'=>'short'],
+        'binary_operator_spaces' => true,
+        'blank_line_after_namespace' => true,
+        'blank_line_after_opening_tag' => true,
+        'cast_spaces' => ['space'=>'none'],
+        'combine_consecutive_issets' => true,
+        'combine_consecutive_unsets' => true,
+        'single_quote' => ['strings_containing_single_quote_chars'=>true],
+    ])
+    ->setFinder(PhpCsFixer\Finder::create()
+        ->exclude('vendor')
+        ->in(__DIR__)
+    )
+;

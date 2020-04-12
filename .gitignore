@@ -1,6 +1,6 @@
 # CakePHP specific files #
 ##########################
-/config/app_local.php
+/config/app.php
 /config/.env
 /logs/*
 /tmp/*
@@ -20,8 +20,6 @@ Thumbs.db
 
 # Tool specific files #
 #######################
-# PHPUnit
-.phpunit.result.cache
 # vim
 *~
 *.swp
@@ -38,6 +36,13 @@ Thumbs.db
 # NetBeans
 nbproject/*
 # Visual Studio Code
-.vscode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
 # Sass preprocessor
 .sass-cache/
+
+config/Migrations/schema-dump-default.lock
+
+# php-cs-fixer
+.php_cs.cache
