@@ -6,7 +6,8 @@
         "vscode-icons-team.vscode-icons",
         "editorconfig.editorconfig",
         "ms-azuretools.vscode-docker",
-        "bmewburn.vscode-intelephense-client"
+        "bmewburn.vscode-intelephense-client",
+        "mrmlnc.vscode-remark"
     ],
     "unwantedRecommendations": []
 }

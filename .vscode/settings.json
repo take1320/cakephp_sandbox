@@ -1,0 +1,12 @@
+{
+    "[markdown]": {
+        "editor.defaultFormatter": "mrmlnc.vscode-remark"
+    },
+    "remark.format": {
+        "rules": {
+            "gfm": true,
+            "bullet": "-",
+            "listItemIndent": 1
+        }
+    }
+}
