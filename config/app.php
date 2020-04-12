@@ -256,21 +256,21 @@ return [
             'className' => Connection::class,
             'driver' => Mysql::class,
             'persistent' => false,
-            'host' => 'localhost',
+            'host' => env('DB_HOST'),
             /*
              * CakePHP will use the default DB port based on the driver selected
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'database' => env('DB_DATABASE'),
+            'username' => env('DB_USERNAME'),
+            'password' => env('DB_PASSWORD'),
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
-            //'encoding' => 'utf8mb4',
-            'timezone' => 'UTC',
+            'encoding' => env('DB_ENCODING'),
+            'timezone' => env('DB_TIMEZONE'),
             'flags' => [],
             'cacheMetadata' => true,
             'log' => false,
