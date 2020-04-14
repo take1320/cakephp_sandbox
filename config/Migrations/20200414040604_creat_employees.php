@@ -66,6 +66,6 @@ class CreatEmployees extends AbstractMigration
 
     public function down()
     {
-        $this->table('employeess')->drop()->save();
+        $this->table('employees')->drop()->save();
     }
 }
