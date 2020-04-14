@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
@@ -27,6 +29,15 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+    public function beforeFilter(Event $event)
+    {
+        // $this->Auth->config('authenticate', [
+        //     'Form' => ['userModel' => 'MEmployees'],
+        // ]);
+        $this->Auth->config('authenticate', [
+            'Form' => ['userModel' => 'MEmployees'],
+        ]);
+    }
 
     /**
      * Initialization hook method.
@@ -51,5 +62,43 @@ class AppController extends Controller
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+
+        // 既存のコード
+
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Authenticate',
+                'action' => 'login'
+            ],
+            // コントローラーで isAuthorized を使用します
+            'authorize' => ['Controller'],
+            // 未認証の場合、直前のページに戻します
+            'unauthorizedRedirect' => $this->referer()
+        ]);
+
+        // display アクションを許可して、PagesController が引き続き
+        // 動作するようにします。また、読み取り専用のアクションを有効にします。
+        // $this->Auth->allow(['display', 'view', 'index']);
     }
+
+    public function isAuthorized($user)
+    {
+        // dd($user);
+        // Admin can access every action
+        // if (isset($user['password']) && $user['pass'] === 'admin') {
+            return true;
+        // }
+
+        // // Default deny
+        // return false;
+    }
+
 }
