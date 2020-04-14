@@ -31,11 +31,8 @@ class AppController extends Controller
 {
     public function beforeFilter(Event $event)
     {
-        // $this->Auth->config('authenticate', [
-        //     'Form' => ['userModel' => 'MEmployees'],
-        // ]);
         $this->Auth->config('authenticate', [
-            'Form' => ['userModel' => 'MEmployees'],
+            'Form' => ['userModel' => 'Employees'],
         ]);
     }
 
@@ -57,14 +54,7 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
-        /*
-         * Enable the following component for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-
-        // 既存のコード
-
+        // 認証
         $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [
