@@ -43,6 +43,12 @@ class CreatEmployees extends AbstractMigration
             'limit' => 128,
             'comment' => 'パスワード',
         ]);
+        $table->addColumn('role', 'enum', [
+            'null' => false,
+            'values' => ['member','owner','admin'],
+            'default' => 'member',
+            'comment' => '権限',
+        ]);
 
         // 共通カラム
         $table->addColumn('created', 'datetime', [
