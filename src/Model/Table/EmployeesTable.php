@@ -90,6 +90,10 @@ class EmployeesTable extends Table
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 
+        $validator
+            ->scalar('role')
+            ->notEmptyString('role');
+
         return $validator;
     }
 

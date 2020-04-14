@@ -23,6 +23,7 @@ class EmployeesFixture extends TestFixture
         'gender' => ['type' => 'string', 'length' => null, 'null' => false, 'default' => 'not_known', 'collate' => 'utf8mb4_unicode_ci', 'comment' => '性別', 'precision' => null, 'fixed' => null],
         'email' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'comment' => 'Email', 'precision' => null, 'fixed' => null],
         'password' => ['type' => 'string', 'length' => 128, 'null' => false, 'default' => null, 'collate' => 'utf8mb4_unicode_ci', 'comment' => 'パスワード', 'precision' => null, 'fixed' => null],
+        'role' => ['type' => 'string', 'length' => null, 'null' => false, 'default' => 'member', 'collate' => 'utf8mb4_unicode_ci', 'comment' => '権限', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '作成日時', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '更新日時', 'precision' => null],
         '_constraints' => [
@@ -51,8 +52,9 @@ class EmployeesFixture extends TestFixture
                 'gender' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
-                'created' => '2020-04-14 13:19:46',
-                'modified' => '2020-04-14 13:19:46',
+                'role' => 'Lorem ipsum dolor sit amet',
+                'created' => '2020-04-14 13:37:31',
+                'modified' => '2020-04-14 13:37:31',
             ],
         ];
         parent::init();

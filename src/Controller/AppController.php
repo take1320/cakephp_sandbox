@@ -81,14 +81,12 @@ class AppController extends Controller
 
     public function isAuthorized($user)
     {
-        // dd($user);
-        // Admin can access every action
-        // if (isset($user['password']) && $user['pass'] === 'admin') {
-            return true;
-        // }
+        // TODO: 権限設定の全体
+        // TODO: 管理者はすべての操作を許可
+        // TODO: 管理者以外はすべての操作を拒否（一般ユーザでも操作可能かは各コントローラで制御）
 
-        // // Default deny
-        // return false;
+        // TODO: 暫定ですべての操作を許可
+        return true;
     }
 
 }

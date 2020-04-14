@@ -23,6 +23,7 @@
                 <th scope="col"><?= $this->Paginator->sort('gender') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('password') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('role') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -39,6 +40,7 @@
                 <td><?= h($employee->gender) ?></td>
                 <td><?= h($employee->email) ?></td>
                 <td><?= h($employee->password) ?></td>
+                <td><?= h($employee->role) ?></td>
                 <td><?= h($employee->created) ?></td>
                 <td><?= h($employee->modified) ?></td>
                 <td class="actions">

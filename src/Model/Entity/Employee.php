@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  * @property string $gender
  * @property string $email
  * @property string $password
+ * @property string $role
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  */
@@ -36,6 +37,7 @@ class Employee extends Entity
         'gender' => true,
         'email' => true,
         'password' => true,
+        'role' => true,
         'created' => true,
         'modified' => true,
     ];

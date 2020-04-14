@@ -45,6 +45,10 @@
             <td><?= h($employee->password) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Role') ?></th>
+            <td><?= h($employee->role) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($employee->id) ?></td>
         </tr>
