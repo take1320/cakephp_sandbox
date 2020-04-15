@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Enum;
+
 final class EmployeeRole extends Enum
 
 {

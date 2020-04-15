@@ -45,6 +45,6 @@ abstract class Enum
 
     final public function __toString()
     {
-        return (string) $this->scalar;
+        return (string)$this->scalar;
     }
 }
