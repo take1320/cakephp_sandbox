@@ -13,6 +13,12 @@ use App\Controller\AppController;
  */
 class EmployeesController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->addPermissionMember();
+    }
+
     /**
      * Index method
      *

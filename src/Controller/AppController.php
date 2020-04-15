@@ -18,6 +18,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use App\Enum\EmployeeRole;
 
 /**
  * Application Controller
@@ -29,6 +30,8 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+    public $permissions = [];
+
     public function beforeFilter(Event $event)
     {
         $this->Auth->config('authenticate', [
@@ -68,25 +71,57 @@ class AppController extends Controller
                 'controller' => 'Authenticate',
                 'action' => 'login'
             ],
-            // コントローラーで isAuthorized を使用します
             'authorize' => ['Controller'],
-            // 未認証の場合、直前のページに戻します
             'unauthorizedRedirect' => $this->referer()
         ]);
-
-        // display アクションを許可して、PagesController が引き続き
-        // 動作するようにします。また、読み取り専用のアクションを有効にします。
-        // $this->Auth->allow(['display', 'view', 'index']);
     }
 
-    public function isAuthorized($user)
-    {
-        // TODO: 権限設定の全体
-        // TODO: 管理者はすべての操作を許可
-        // TODO: 管理者以外はすべての操作を拒否（一般ユーザでも操作可能かは各コントローラで制御）
+    /**
+     * メンバー権限による参照を可能とする
+     */
+    final public function addPermissionMember(){
+        $this->permissions[] = EmployeeRole::MEMBER();
+    }
 
-        // TODO: 暫定ですべての操作を許可
+    /**
+     * オーナー権限による参照を可能とする
+     */
+    final public function addPermissionOwner(){
+        $this->permissions[] = EmployeeRole::OWNER();
+    }
+
+    /**
+     * 操作権限制御
+     * 権限別の制御を行う場合はisAuthorizedDetailCondition()を
+     * オーバーライドして制御する
+     */
+    final public function isAuthorized($user)
+    {
+        if (empty($user)) {
+            return false;
+        }
+
+        // 管理者権限ば許可
+        if ($user['role'] === EmployeeRole::ADMIN()) {
+            return true;
+        }
+
+        // ロールが許可されている場合、詳細条件の判定を行う
+        if (in_array($user['role'], $this->permissions)) {
+            return $this->isAuthorizedDetailCondition($user);
+        }
+
+        // 権限該当無し
+        $this->Auth->config('authError', 'このページを操作する権限がありません');
+        return false;
+    }
+
+    /**
+     * 操作権限制御詳細
+     */
+    protected function isAuthorizedDetailCondition($user)
+    {
+        // オーバーライドしない場合、trueeとして動作
         return true;
     }
-
 }
