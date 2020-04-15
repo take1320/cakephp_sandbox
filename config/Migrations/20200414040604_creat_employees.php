@@ -6,7 +6,7 @@ class CreatEmployees extends AbstractMigration
 {
     public function up()
     {
-        $table = $this->table('employees',['collation'=>'utf8mb4_unicode_ci']);
+        $table = $this->table('employees', ['collation' => 'utf8mb4_unicode_ci']);
         $table->addColumn('family_name', 'string', [
             'null' => false,
             'limit' => 30,
@@ -29,7 +29,7 @@ class CreatEmployees extends AbstractMigration
         ]);
         $table->addColumn('gender', 'enum', [
             'null' => false,
-            'values' => ['not_known','male','female','not_applicable'],
+            'values' => ['not_known', 'male', 'female', 'not_applicable'],
             'default' => 'not_known',
             'comment' => '性別',
         ]);
@@ -45,7 +45,7 @@ class CreatEmployees extends AbstractMigration
         ]);
         $table->addColumn('role', 'enum', [
             'null' => false,
-            'values' => ['member','owner','admin'],
+            'values' => ['member', 'owner', 'admin'],
             'default' => 'member',
             'comment' => '権限',
         ]);
