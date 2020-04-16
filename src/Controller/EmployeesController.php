@@ -110,4 +110,20 @@ class EmployeesController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function api()
+    {
+        $this->autoRender = false;
+        $this->response->type('application/json');
+        // $employees = $this->paginate($this->Employees);
+        $employees = $this->Employees->find('all');
+
+        // $this->set(
+        //     [
+        //         'employees' => $employees,
+        //         '_serialize' => ['employees']
+        //     ]
+        // );
+        $this->response->body(json_encode($employees->toArray(),JSON_UNESCAPED_UNICODE));
+    }
 }
