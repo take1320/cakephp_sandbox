@@ -29,13 +29,13 @@ dockerを利用した開発を前提としています。
 ### 動作確認
 
 - URL
-  - `http://localhost:8080`
+  - `http://localhost:8081`
 
 ## 開発 Tips
 
 ### パッケージインストールをローカルディレクトリに実行
 
-    docker run --rm --interactive --tty -v $PWD:/var/www/html cakephp_sandbox_phpfpm composer install
+    docker run --rm --interactive --tty -v $PWD:/var/www/html cakephp-sandbox_phpfpm composer install
 
 ### phinx migrationファイル作成
 
@@ -49,6 +49,10 @@ dockerを利用した開発を前提としています。
 
     docker-compose exec phpfpm bin/cake migrations migrate
     docker-compose exec phpfpm bin/cake migrations rollback
+
+### シーダーの実行
+
+    docker-compose exec phpfpm php vendor/bin/phinx seed:run
 
 ### フォーマッタ php-cs-fixer
 
