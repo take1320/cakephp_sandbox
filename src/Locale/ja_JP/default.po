@@ -17,20 +17,20 @@ msgstr ""
 #: Controller/EmployeesController.php:61
 #: Controller/EmployeesController.php:85
 msgid "The employee has been saved."
-msgstr ""
+msgstr "従業員情報を保存しました。"
 
 #: Controller/EmployeesController.php:65
 #: Controller/EmployeesController.php:89
 msgid "The employee could not be saved. Please, try again."
-msgstr ""
+msgstr "従業員情報の保存に失敗しました。再度お試し下さい。"
 
 #: Controller/EmployeesController.php:106
 msgid "The employee has been deleted."
-msgstr ""
+msgstr "従業員情報を削除しました。"
 
 #: Controller/EmployeesController.php:108
 msgid "The employee could not be deleted. Please, try again."
-msgstr ""
+msgstr "従業員情報の削除に失敗しました。再度お試し下さい。"
 
 #: Template/Employees/add.ctp:9
 #: Template/Employees/edit.ctp:9
@@ -38,73 +38,73 @@ msgstr ""
 #: Template/Employees/index.ctp:29
 #: Template/Employees/view.ctp:9
 msgid "Actions"
-msgstr ""
+msgstr "操作"
 
 #: Template/Employees/add.ctp:10
 #: Template/Employees/edit.ctp:16
 #: Template/Employees/view.ctp:12
 msgid "List Employees"
-msgstr ""
+msgstr "従業員情報 一覽"
 
 #: Template/Employees/add.ctp:16
 msgid "Add Employee"
-msgstr ""
+msgstr "従業員情報 登録"
 
 #: Template/Employees/add.ctp:28
 #: Template/Employees/edit.ctp:34
 #: View/Helper/FormHelper.php:2030
 msgid "Submit"
-msgstr ""
+msgstr "保存"
 
 #: Template/Employees/edit.ctp:11
 #: Template/Employees/index.ctp:49
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #: Template/Employees/edit.ctp:13
 #: Template/Employees/index.ctp:49
 #: Template/Employees/view.ctp:11
 msgid "Are you sure you want to delete # {0}?"
-msgstr ""
+msgstr "削除します。何をしようとしているか理解していますね？"
 
 #: Template/Employees/edit.ctp:22
 #: Template/Employees/view.ctp:10
 msgid "Edit Employee"
-msgstr ""
+msgstr "従業員情報 編集"
 
 #: Template/Employees/index.ctp:10
 #: Template/Employees/view.ctp:13
 msgid "New Employee"
-msgstr ""
+msgstr "従業員情報 登録"
 
 #: Template/Employees/index.ctp:14
 msgid "Employees"
-msgstr ""
+msgstr "従業員 一覽"
 
 #: Template/Employees/index.ctp:47
 #: View/Helper/PaginatorHelper.php:1271
 msgid "View"
-msgstr ""
+msgstr "詳細"
 
 #: Template/Employees/index.ctp:48
 msgid "Edit"
-msgstr ""
+msgstr "編集"
 
 #: Template/Employees/index.ctp:57
 msgid "first"
-msgstr ""
+msgstr "先頭"
 
 #: Template/Employees/index.ctp:58
 msgid "previous"
-msgstr ""
+msgstr "前へ"
 
 #: Template/Employees/index.ctp:60
 msgid "next"
-msgstr ""
+msgstr "次へ"
 
 #: Template/Employees/index.ctp:61
 msgid "last"
-msgstr ""
+msgstr "末尾"
 
 #: Template/Employees/index.ctp:63
 msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
@@ -112,69 +112,69 @@ msgstr ""
 
 #: Template/Employees/view.ctp:11
 msgid "Delete Employee"
-msgstr ""
+msgstr "従業員情報 削除"
 
 #: Template/Employees/view.ctp:20
 msgid "Family Name"
-msgstr ""
+msgstr "姓"
 
 #: Template/Employees/view.ctp:24
 msgid "Given Name"
-msgstr ""
+msgstr "名"
 
 #: Template/Employees/view.ctp:28
 msgid "Family Name Kana"
-msgstr ""
+msgstr "姓(カナ)"
 
 #: Template/Employees/view.ctp:32
 msgid "Given Name Kana"
-msgstr ""
+msgstr "名(カナ)"
 
 #: Template/Employees/view.ctp:36
 msgid "Gender"
-msgstr ""
+msgstr "性別"
 
 #: Template/Employees/view.ctp:40
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: Template/Employees/view.ctp:44
 msgid "Password"
-msgstr ""
+msgstr "パスワード"
 
 #: Template/Employees/view.ctp:48
 msgid "Role"
-msgstr ""
+msgstr "権限"
 
 #: Template/Employees/view.ctp:52
 msgid "Id"
-msgstr ""
+msgstr "従業員ID"
 
 #: Template/Employees/view.ctp:56
 msgid "Created"
-msgstr ""
+msgstr "作成日時"
 
 #: Template/Employees/view.ctp:60
 msgid "Modified"
-msgstr ""
+msgstr "更新日時"
 
 #: Template/Layout/error.ctp:35
 #: Template/Error/error400.ctp:36
 #: Template/Error/error500.ctp:41
 msgid "Error"
-msgstr ""
+msgstr "エラー"
 
 #: Template/Layout/error.ctp:43
 msgid "Back"
-msgstr ""
+msgstr "戻る"
 
 #: Template/Error/error400.ctp:37
 msgid "The requested address {0} was not found on this server."
-msgstr ""
+msgstr "404 NotFound"
 
 #: Template/Error/error500.ctp:39
 msgid "An Internal Error Has Occurred"
-msgstr ""
+msgstr "500 Internal Error"
 
 #: Controller/Component/AuthComponent.php:500
 msgid "You are not authorized to access that location."
@@ -420,49 +420,49 @@ msgstr ""
 
 #: View/Widget/DateTimeWidget.php:539
 msgid "January"
-msgstr ""
+msgstr "1月"
 
 #: View/Widget/DateTimeWidget.php:540
 msgid "February"
-msgstr ""
+msgstr "2月"
 
 #: View/Widget/DateTimeWidget.php:541
 msgid "March"
-msgstr ""
+msgstr "3月"
 
 #: View/Widget/DateTimeWidget.php:542
 msgid "April"
-msgstr ""
+msgstr "4月"
 
 #: View/Widget/DateTimeWidget.php:543
 msgid "May"
-msgstr ""
+msgstr "5月"
 
 #: View/Widget/DateTimeWidget.php:544
 msgid "June"
-msgstr ""
+msgstr "6月"
 
 #: View/Widget/DateTimeWidget.php:545
 msgid "July"
-msgstr ""
+msgstr "7月"
 
 #: View/Widget/DateTimeWidget.php:546
 msgid "August"
-msgstr ""
+msgstr "8月"
 
 #: View/Widget/DateTimeWidget.php:547
 msgid "September"
-msgstr ""
+msgstr "9月"
 
 #: View/Widget/DateTimeWidget.php:548
 msgid "October"
-msgstr ""
+msgstr "10月"
 
 #: View/Widget/DateTimeWidget.php:549
 msgid "November"
-msgstr ""
+msgstr "11月"
 
 #: View/Widget/DateTimeWidget.php:550
 msgid "December"
-msgstr ""
+msgstr "12月"
 
