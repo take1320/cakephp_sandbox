@@ -1,14 +1,20 @@
-# 課題URL（JIRAかGitHub issue）
-[required]
+<!-- Issue 番号がない PR は受け付けません。 -->
+<!-- We don't accept PRs which has no Issue ID. -->
 
-# PRのDoneの定義
-[required]
+## 👏 解決する issue
+- close #0
+- close #0
 
-# 変更点概要
-[required]
+## 📝 関連する issue
+- #0
+- #0
 
-# レビュアーに重点的にチェックして欲しい点
-[optional]
+## ⛏ 変更内容
+<!-- 変更を端的に箇条書きで -->
+<!-- List down your changes concisely -->
+- xxxxxx
+- xxx
 
-# 補足情報
-[optional]
+## 📸 スクリーンショット
+<!-- スタイルなどの変更の場合はスクリーンショットがあるとレビューしやすいです -->
+<!-- Changes in styles would be easier to review with screenshots! -->
