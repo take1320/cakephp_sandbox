@@ -101,13 +101,15 @@ class AppController extends Controller
             return false;
         }
 
+        $userRole = new EmployeeRole($user['role']);
+
         // 管理者権限ば許可
-        if ($user['role'] === EmployeeRole::ADMIN()) {
+        if ($userRole == EmployeeRole::ADMIN()) {
             return true;
         }
 
         // ロールが許可されている場合、詳細条件の判定を行う
-        if (in_array($user['role'], $this->permissions)) {
+        if (in_array($userRole, $this->permissions)) {
             return $this->isAuthorizedDetailCondition($user);
         }
 
