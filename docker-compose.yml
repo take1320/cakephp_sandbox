@@ -13,7 +13,7 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     ports:
-      - 33060:3306
+      - 33061:3306
   phpfpm:
     build:
       context: .
@@ -32,7 +32,7 @@ services:
     volumes:
       - .:/var/www/html
     ports:
-      - 8080:80
+      - 8081:80
 volumes:
   mysql-data:
     driver: local

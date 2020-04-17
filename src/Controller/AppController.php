@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,10 +13,12 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use App\Enum\EmployeeRole;
 
 /**
  * Application Controller
@@ -27,6 +30,14 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
+    public $permissions = [];
+
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->config('authenticate', [
+            'Form' => ['userModel' => 'Employees'],
+        ]);
+    }
 
     /**
      * Initialization hook method.
@@ -46,10 +57,73 @@ class AppController extends Controller
         ]);
         $this->loadComponent('Flash');
 
-        /*
-         * Enable the following component for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
+        // 認証
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'email',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Authenticate',
+                'action' => 'login'
+            ],
+            'authorize' => ['Controller'],
+            'unauthorizedRedirect' => $this->referer()
+        ]);
+    }
+
+    /**
+     * メンバー権限による参照を可能とする
+     */
+    final public function addPermissionMember(){
+        $this->permissions[] = EmployeeRole::MEMBER();
+    }
+
+    /**
+     * オーナー権限による参照を可能とする
+     */
+    final public function addPermissionOwner(){
+        $this->permissions[] = EmployeeRole::OWNER();
+    }
+
+    /**
+     * 操作権限制御
+     * 権限別の制御を行う場合はisAuthorizedDetailCondition()を
+     * オーバーライドして制御する
+     */
+    final public function isAuthorized($user)
+    {
+        if (empty($user)) {
+            return false;
+        }
+
+        $userRole = new EmployeeRole($user['role']);
+
+        // 管理者権限ば許可
+        if ($userRole == EmployeeRole::ADMIN()) {
+            return true;
+        }
+
+        // ロールが許可されている場合、詳細条件の判定を行う
+        if (in_array($userRole, $this->permissions)) {
+            return $this->isAuthorizedDetailCondition($user);
+        }
+
+        // 権限該当無し
+        $this->Auth->config('authError', 'このページを操作する権限がありません');
+        return false;
+    }
+
+    /**
+     * 操作権限制御詳細
+     */
+    protected function isAuthorizedDetailCondition($user)
+    {
+        // オーバーライドしない場合、trueeとして動作
+        return true;
     }
 }
