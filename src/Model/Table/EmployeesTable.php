@@ -86,7 +86,7 @@ class EmployeesTable extends Table
             ->notEmptyString('gender');
 
         $validator
-            ->email('email', false, "メールアドレスを入力して下さい")
+            ->email('email', false, 'メールアドレスを入力して下さい')
             ->requirePresence('email', 'create')
             ->notEmptyString('email');
 
