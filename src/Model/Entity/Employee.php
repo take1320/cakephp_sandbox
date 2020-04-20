@@ -22,6 +22,19 @@ use Cake\Auth\DefaultPasswordHasher;
  */
 class Employee extends Entity
 {
+    const GENDER = [
+        'not_known' => '不明',
+        'male' => '男性',
+        'female' => '女性',
+        'not_applicable' => '適用不能'
+    ];
+
+    const ROLE = [
+        'member' => 'メンバー',
+        'owner' => 'オーナー',
+        'admin' => '管理者',
+    ];
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -58,5 +71,15 @@ class Employee extends Entity
         if (strlen($password) > 0) {
             return (new DefaultPasswordHasher)->hash($password);
         }
+    }
+
+    protected function _getGenderLabel()
+    {
+        return self::GENDER[$this->_properties['gender']];
+    }
+
+    protected function _getRoleLabel()
+    {
+        return self::ROLE[$this->_properties['role']];
     }
 }

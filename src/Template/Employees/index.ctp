@@ -37,10 +37,10 @@
                 <td><?= h($employee->given_name) ?></td>
                 <td><?= h($employee->family_name_kana) ?></td>
                 <td><?= h($employee->given_name_kana) ?></td>
-                <td><?= h($employee->gender) ?></td>
+                <td><?= h($employee->gender_label) ?></td>
                 <td><?= h($employee->email) ?></td>
                 <td><?= h($employee->password) ?></td>
-                <td><?= h($employee->role) ?></td>
+                <td><?= h($employee->role_label) ?></td>
                 <td><?= h($employee->created) ?></td>
                 <td><?= h($employee->modified) ?></td>
                 <td class="actions">
