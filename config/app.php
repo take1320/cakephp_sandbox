@@ -390,5 +390,6 @@ return [
      */
     'Session' => [
         'defaults' => 'database',
+        'cookie' => 'CAKEPHP_SANDBOX',
     ],
 ];
