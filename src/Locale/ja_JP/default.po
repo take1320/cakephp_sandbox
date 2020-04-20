@@ -400,11 +400,11 @@ msgstr ""
 
 #: Validation/Validator.php:2459
 msgid "This field cannot be left empty"
-msgstr ""
+msgstr "この項目は必須です"
 
 #: Validation/Validator.php:2610
 msgid "The provided value is invalid"
-msgstr ""
+msgstr "入力された値は無効です"
 
 #: View/Helper/FormHelper.php:1108
 msgid "Edit {0}"

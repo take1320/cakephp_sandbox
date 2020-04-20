@@ -7,6 +7,8 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
+use App\Model\Entity\Employee;
+
 /**
  * Employees Model
  *
@@ -23,6 +25,8 @@ use Cake\Validation\Validator;
  */
 class EmployeesTable extends Table
 {
+
+
     /**
      * Initialize method
      *
@@ -78,21 +82,23 @@ class EmployeesTable extends Table
 
         $validator
             ->scalar('gender')
+            ->inList('gender', array_keys(Employee::GENDER), '正しい性別を入力して下さい')
             ->notEmptyString('gender');
 
         $validator
-            ->email('email')
+            ->email('email', false, "メールアドレスを入力して下さい")
             ->requirePresence('email', 'create')
             ->notEmptyString('email');
 
         $validator
             ->scalar('password')
-            ->maxLength('password', 128)
+            ->lengthBetween('password', [8, 120], '8文字以上、120文字以下を入力して下さい')
             ->requirePresence('password', 'create')
             ->notEmptyString('password');
 
         $validator
             ->scalar('role')
+            ->inList('role', array_keys(Employee::ROLE), '正しい権限を入力して下さい')
             ->notEmptyString('role');
 
         return $validator;
