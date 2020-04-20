@@ -30,6 +30,13 @@ dockerを利用した開発を前提としています。
 
 - URL
   - `http://localhost:8081`
+- ログイン情報
+
+  | Email              | Password |
+  | :----------------- | :------- |
+  | member@example.com | password |
+  | owner@example.com  | password |
+  | admin@example.com  | password |
 
 ## 開発 Tips
 
@@ -45,14 +52,9 @@ dockerを利用した開発を前提としています。
 
     docker-compose exec phpfpm bin/cake bake all {テーブル名}
 
-### マイグレーション migrate & rollback
+### マイグレーション migrate & rollback & シーダーの実行
 
-    docker-compose exec phpfpm bin/cake migrations migrate
-    docker-compose exec phpfpm bin/cake migrations rollback
-
-### シーダーの実行
-
-    docker-compose exec phpfpm php vendor/bin/phinx seed:run
+    docker-compose exec phpfpm sh bin/refresh_database.sh
 
 ### フォーマッタ php-cs-fixer
 

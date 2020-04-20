@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreatEmployees extends AbstractMigration
+class CreateEmployees extends AbstractMigration
 {
     public function up()
     {
