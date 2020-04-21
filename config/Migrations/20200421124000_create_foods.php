@@ -42,14 +42,15 @@ class CreateFoods extends AbstractMigration
             'delete' => 'CASCADE',
             'update' => 'CASCADE'
         ]);
+        $table->update();
     }
 
     public function down()
     {
-        // $this->table('foods')
-        //     ->dropForeignKey(
-        //         'product_id'
-        //     )->save();
+        $this->table('foods')
+            ->dropForeignKey(
+                'product_id'
+            )->save();
 
         $this->table('foods')->drop()->save();
     }
