@@ -6,7 +6,10 @@ class CreateEmployees extends AbstractMigration
 {
     public function up()
     {
-        $table = $this->table('employees', ['collation' => 'utf8mb4_unicode_ci']);
+        $table = $this->table('employees', [
+            'collation' => 'utf8mb4_unicode_ci',
+            'comment' => '従業員'
+        ]);
         $table->addColumn('family_name', 'string', [
             'null' => false,
             'limit' => 30,
