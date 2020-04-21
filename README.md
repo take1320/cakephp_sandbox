@@ -54,7 +54,7 @@ dockerを利用した開発を前提としています。
 
 ### マイグレーション migrate & rollback & シーダーの実行
 
-    docker-compose exec phpfpm sh bin/refresh_database.sh
+    docker-compose exec phpfpm sh bin/migrate_refresh.sh
 
 ### フォーマッタ php-cs-fixer
 
