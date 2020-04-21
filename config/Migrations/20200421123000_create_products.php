@@ -29,6 +29,19 @@ class CreateProducts extends AbstractMigration
             'default' => null,
             'comment' => '販売終了日時',
         ]);
+        $table->addColumn('can_order', 'boolean', [
+            'null' => false,
+            'default' => false,
+            'comment' => '発注可能',
+        ]);
+        $table->addColumn('quantity_per_lot', 'integer', [
+            'null' => false,
+            'comment' => '１ロットあたりの数量',
+        ]);
+        $table->addColumn('min_order_lot_quantity', 'integer', [
+            'null' => false,
+            'comment' => '発注時の最低ロット数',
+        ]);
         // 共通カラム
         $table->addColumn('created', 'datetime', [
             'null' => false,
@@ -45,6 +58,6 @@ class CreateProducts extends AbstractMigration
 
     public function down()
     {
-        $this->table('employees')->drop()->save();
+        $this->table('products')->drop()->save();
     }
 }
