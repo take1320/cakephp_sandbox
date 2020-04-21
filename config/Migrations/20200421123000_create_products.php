@@ -10,6 +10,11 @@ class CreateProducts extends AbstractMigration
             'collation' => 'utf8mb4_unicode_ci',
             'comment' => '商品'
         ]);
+        $table->addColumn('type', 'string', [
+            'null' => false,
+            'limit' => 32,
+            'comment' => '商品種別',
+        ]);
         $table->addColumn('name', 'string', [
             'null' => false,
             'limit' => 255,
