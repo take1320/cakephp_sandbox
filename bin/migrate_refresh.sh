@@ -9,7 +9,7 @@ bin/cake migrations rollback -t 0
 bin/cake migrations migrate
 
 # seeder run
-php vendor/bin/phinx seed:run
+php vendor/bin/phinx seed:run -s MainSeeder
 
 # TODO: キャッシュクリアが必要なケースが判明したらコメントアウト削除
 #bin/cake cache clear_all
