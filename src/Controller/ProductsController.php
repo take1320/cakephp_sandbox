@@ -12,6 +12,12 @@ use App\Controller\AppController;
  */
 class ProductsController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+        $this->addPermissionMember();
+    }
+
     /**
      * Index method
      *
