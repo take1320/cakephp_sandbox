@@ -6,6 +6,8 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
+use App\Model\Entity\Product;
+
 /**
  * Products Model
  *
@@ -60,6 +62,7 @@ class ProductsTable extends Table
         $validator
             ->scalar('type')
             ->maxLength('type', 32)
+            ->inList('type', array_keys(Product::TYPE), '正しい商品種別を入力して下さい')
             ->requirePresence('type', 'create')
             ->notEmptyString('type');
 

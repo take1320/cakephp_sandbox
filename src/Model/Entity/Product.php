@@ -22,6 +22,11 @@ use Cake\ORM\Entity;
  */
 class Product extends Entity
 {
+    const TYPE = [
+        'food' => '食品',
+        'item' => '物品',
+    ];
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
